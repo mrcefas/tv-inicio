@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage" class="d-shore">
+  <div id="bg"></div>
+  <div id="shade"></div>
+
+  <!-- ecrã inicial -->
+  <section id="home" class="screen on">
+    <div id="clock">
+      <div id="time"></div>
+      <div id="date"></div>
+      <div id="greet"></div>
+    </div>
+    <div id="quick"><span class="qbtn f" data-key="q-look">Aparência</span></div>
+    <div id="tiles"></div>
+  </section>
+
+  <!-- aparência: painel lateral, as mudanças veem-se logo atrás -->
+  <section id="look" class="screen">
+    <div class="panel">
+      <div class="eyebrow">Aparência</div>
+      <h2>À tua maneira</h2>
+      <div id="lookRows"></div>
+    </div>
+  </section>
+
+  <!-- escolher apps -->
+  <section id="apps" class="screen">
+    <div class="panel">
+      <div class="eyebrow">Ecrã inicial</div>
+      <h2>Escolher apps</h2>
+      <p class="lede">OK põe ou tira uma app. Ficam pela ordem em que as escolhes. Back para voltar.</p>
+      <div id="appGrid"></div>
+    </div>
+  </section>
+
+  <!-- diagnóstico: só lê informação, não altera nada na TV -->
+  <section id="diag" class="screen">
+    <div class="panel">
+      <div class="eyebrow">Diagnóstico</div>
+      <h2>Informação do browser da TV</h2>
+      <p class="lede">Tira uma foto a este ecrã. Serve para saber o que a TV permite. Back para voltar.</p>
+      <div id="diagOut"></div>
+    </div>
+  </section>
+
+  <div id="toast" class="hidden"></div>
+  <div id="saver" class="hidden"><div id="saverClock"></div></div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

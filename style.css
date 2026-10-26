@@ -1,0 +1,102 @@
+/* Pensado para o browser antigo do VIDAA: sem variáveis CSS, sem gap, sem grid, sem backdrop-filter.
+   O palco tem 1920x1080 e é escalado ao ecrã por app.js. */
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #0a0a0a; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #fff; }
+
+#stage {
+  position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;
+  -webkit-transform-origin: 0 0; transform-origin: 0 0;
+}
+#bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
+#shade { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.25); }
+
+.screen { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none; }
+.screen.on { display: block; }
+.hidden { display: none !important; }
+
+/* ---------- relógio ---------- */
+#clock { position: absolute; left: 110px; top: 80px; }
+#time { font-size: 120px; font-weight: 200; line-height: 1; letter-spacing: -2px; }
+#date { font-size: 32px; font-weight: 300; margin-top: 12px; opacity: 0.85; }
+#greet { font-size: 30px; font-weight: 300; margin-top: 6px; opacity: 0.7; }
+
+/* ---------- botão rápido (Aparência) ---------- */
+#quick { position: absolute; right: 110px; top: 90px; }
+.qbtn {
+  display: inline-block; height: 64px; line-height: 64px; padding: 0 28px; border-radius: 32px;
+  background: rgba(255, 255, 255, 0.14); border: 2px solid rgba(255, 255, 255, 0.25);
+  font-size: 26px; color: #fff;
+}
+
+/* ---------- tiles ---------- */
+#tiles { position: absolute; left: 0; right: 0; text-align: center; font-size: 0; }
+.tile {
+  display: inline-block; vertical-align: top; position: relative; text-align: center;
+  border-radius: 22px; border: 3px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+}
+.tile .mark { font-weight: 700; color: #fff; }
+.tile .name { color: #fff; opacity: 0.9; }
+
+/* Mosaico: tiles grandes, translúcidos, ao centro */
+.d-shore #tiles { top: 400px; padding: 0 160px; }
+.d-shore .tile { width: 340px; height: 190px; margin: 0 18px 36px; }
+.d-shore .tile .mark { font-size: 64px; line-height: 64px; margin-top: 40px; }
+.d-shore .tile .name { font-size: 26px; margin-top: 22px; }
+.d-shore .tile .bar { position: absolute; left: 50%; bottom: 14px; width: 60px; height: 6px; margin-left: -30px; border-radius: 3px; }
+
+/* Minimal: relógio grande ao centro, logos pequenos em baixo */
+.d-minimal #clock { left: 0; right: 0; top: 300px; text-align: center; }
+.d-minimal #time { font-size: 220px; }
+.d-minimal #date { font-size: 40px; }
+.d-minimal #tiles { bottom: 90px; }
+.d-minimal .tile { width: 170px; height: 110px; margin: 0 10px; background: rgba(0, 0, 0, 0.25); border-color: rgba(255, 255, 255, 0.12); }
+.d-minimal .tile .mark { font-size: 38px; line-height: 38px; margin-top: 22px; }
+.d-minimal .tile .name { font-size: 18px; margin-top: 12px; }
+
+.clock-hide #clock { display: none; }
+
+/* foco: borda branca e fundo mais claro. Sem animações para não pesar. */
+.f.focus { border-color: #fff !important; background: rgba(255, 255, 255, 0.32) !important; box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35); }
+.qbtn.focus { background: #fff !important; color: #111; }
+
+/* ---------- dica ---------- */
+#toast {
+  position: absolute; left: 50%; bottom: 70px; width: 1100px; margin-left: -550px; text-align: center;
+  padding: 26px 30px; border-radius: 20px; background: rgba(0, 0, 0, 0.78); font-size: 32px;
+}
+
+/* ---------- painéis ---------- */
+.panel {
+  position: absolute; top: 80px; bottom: 80px; border-radius: 30px;
+  background: rgba(10, 14, 18, 0.88); border: 2px solid rgba(255, 255, 255, 0.12); padding: 50px 56px;
+}
+#look .panel { right: 80px; width: 640px; }
+#apps .panel, #diag .panel { left: 160px; right: 160px; }
+.eyebrow { font-size: 22px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.6; }
+.panel h2 { font-size: 52px; font-weight: 400; margin: 10px 0 34px; }
+.lede { font-size: 26px; opacity: 0.75; margin: -18px 0 30px; }
+
+.row {
+  height: 76px; line-height: 76px; padding: 0 28px; margin-bottom: 14px; border-radius: 16px;
+  font-size: 28px; background: rgba(255, 255, 255, 0.07); border: 2px solid transparent;
+}
+.row .val { float: right; opacity: 0.85; }
+.row.focus .val { opacity: 1; }
+.row.focus { color: #111; background: #fff !important; }
+
+#appGrid { font-size: 0; }
+#appGrid .tile { width: 260px; height: 150px; margin: 0 22px 26px 0; }
+#appGrid .tile .mark { font-size: 46px; line-height: 46px; margin-top: 30px; }
+#appGrid .tile .name { font-size: 22px; margin-top: 16px; }
+#appGrid .tile.off { opacity: 0.35; }
+.tile .num {
+  position: absolute; right: 12px; top: 10px; width: 40px; height: 40px; line-height: 40px; border-radius: 20px;
+  background: #fff; color: #111; font-size: 22px; font-weight: 700;
+}
+
+#diagOut { font-family: "Courier New", monospace; font-size: 22px; line-height: 1.45; white-space: pre-wrap; word-wrap: break-word; height: 700px; overflow: hidden; }
+
+/* ---------- proteção de ecrã ---------- */
+#saver { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #000; }
+#saverClock { position: absolute; font-size: 140px; font-weight: 200; opacity: 0.55; }

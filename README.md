@@ -27,6 +27,7 @@ Tudo está em `config.js`: apps, fundos e valores por defeito. Na TV, o botão *
 Se o `hisense://debug` abrir em branco, guarda a página como favorito no Browser.
 
 ## Limites (do VIDAA, não da página)
+- Neste firmware (V0100.01.00F.P0220), o tile fica cinzento na lista de apps, mesmo com os ícones preenchidos: o VIDAA não os mostra.
 - O botão Home do comando continua a abrir o ecrã do VIDAA.
 - Uma página não consegue abrir apps nativas (Netflix, YouTube…) nem mudar de HDMI. Esses tiles mostram que botão carregar.
 - **Aparência > Diagnóstico** mostra as funções que o browser da TV expõe. Uma foto desse ecrã diz se dá para fazer mais.

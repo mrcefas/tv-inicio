@@ -15,7 +15,13 @@ Tudo está em `config.js`: apps, fundos e valores por defeito. Na TV, o botão *
 ## Instalar na TV
 1. A pasta `launcher/` tem de estar num endereço público (ex.: GitHub Pages).
 2. Na TV, abre o **Browser** e escreve `hisense://debug`.
-3. Nome: `Início`. URL: o endereço da página. Escolhe **Install**.
+3. Preenche e escolhe **Install**:
+   - App Name: `inicio`
+   - Thumbnail: `https://mrcefas.github.io/tv-inicio/thumbnail.png`
+   - IconSmall: `https://mrcefas.github.io/tv-inicio/icon.png`
+   - IconLarge: `https://mrcefas.github.io/tv-inicio/icon-large.png`
+   - App Url: `https://mrcefas.github.io/tv-inicio/`
+   - Resolution: `720`
 4. Reinicia a TV. A app aparece no fim da lista de apps: move-a para o primeiro lugar.
 
 Se o `hisense://debug` abrir em branco, guarda a página como favorito no Browser.

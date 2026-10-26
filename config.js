@@ -10,13 +10,14 @@ window.INICIO_CONFIG = {
     bg: "noite",
     clock: "show",
     hour12: false,
-    apps: ["netflix", "youtube", "primevideo", "disneyplus", "rtpplay", "hdmi"]
+    apps: ["bait", "netflix", "youtube", "primevideo", "disneyplus", "rtpplay", "hdmi"]
   },
 
   screensaverMinutes: 10,
 
   apps: [
-    { id: "netflix",    name: "Netflix",     color: "#E50914", mark: "N",        hint: "Carrega no botão NETFLIX do comando." },
+    { id: "bait",       name: "Bait",        color: "#7C9CFF", mark: "B",        url: "https://bait.deunavista.pt/" },
+    { id: "netflix",   name: "Netflix",     color: "#E50914", mark: "N",        hint: "Carrega no botão NETFLIX do comando." },
     { id: "youtube",    name: "YouTube",     color: "#FF0000", mark: "▶",   hint: "Carrega no botão YouTube do comando, ou abre-o na lista de apps." },
     { id: "primevideo", name: "Prime Video", color: "#00A8E1", mark: "prime",    hint: "Carrega no botão Prime Video do comando, ou abre-o na lista de apps." },
     { id: "disneyplus", name: "Disney+",     color: "#113CCF", mark: "D+",       hint: "Abre o Disney+ na lista de apps (botão Apps do comando)." },
